@@ -1,0 +1,6 @@
+{
+  "name": "EDC Live",
+  "description": "Production-grade full-duplex live voice AI companion with low-latency streaming audio, voice activity detection, barge-in interruption, persistent memory, and live knowledge search.",
+  "requestFramePermissions": ["microphone", "camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

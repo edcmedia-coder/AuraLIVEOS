@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #00e5ff;
+  --color-secondary: #0066ff;
+  --color-accent: #00ffff;
+  --color-edc-blue: #00d2ff;
+  
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui;
+  
+  --radius-3xl: 24px;
+  --radius-4xl: 32px;
+}
+
+@layer base {
+  :root {
+    --glass-bg: rgba(0, 0, 0, 0.4);
+    --glass-border: rgba(0, 210, 255, 0.15);
+    --neon-glow: 0 0 15px rgba(0, 210, 255, 0.4);
+  }
+
+  body {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    @apply bg-black text-white overflow-hidden;
+    font-feature-settings: "cv02", "cv03", "cv04", "ss01";
+  }
+
+  * {
+    @apply border-white/5;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-black/40 backdrop-blur-3xl border border-white/10 rounded-3xl shadow-2xl;
+  }
+  
+  .glass-input {
+    @apply bg-black/60 border border-white/10 rounded-2xl px-4 py-3 focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all outline-none;
+  }
+
+  .cinematic-shadow {
+    box-shadow: 0 0 30px -5px rgba(0, 229, 255, 0.3);
+  }
+
+  .neon-border {
+    @apply border border-primary/30 shadow-[0_0_15px_rgba(0,229,255,0.15)];
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* 120fps smoothness hint */
+* {
+  backface-visibility: hidden;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
